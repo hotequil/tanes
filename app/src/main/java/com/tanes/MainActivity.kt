@@ -2,15 +2,28 @@ package com.tanes
 
 import android.os.Bundle
 import android.util.Log
+import android.view.View
+import android.widget.Button
+import android.widget.EditText
+import android.widget.TextView
+import android.widget.Toast
 import androidx.activity.ComponentActivity
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.main_activity)
 
         Log.i("Life cycle", "onCreate")
+
+        val setTextButton = findViewById<Button>(R.id.set_text_button)
+        val typeText = findViewById<EditText>(R.id.type_text)
+        val resultText = findViewById<TextView>(R.id.result_text)
+
+        setTextButton.setOnClickListener{
+            resultText.text = typeText.editableText.toString()
+        }
     }
 
     override fun onStart() {
@@ -47,5 +60,10 @@ class MainActivity : ComponentActivity() {
         super.onDestroy()
 
         Log.i("Life cycle", "onDestroy")
+    }
+
+    fun setText(view: View){
+        Log.i("View", view.toString())
+        Toast.makeText(this, "It was clicked", Toast.LENGTH_SHORT).show()
     }
 }

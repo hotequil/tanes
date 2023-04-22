@@ -7,20 +7,29 @@
               android:padding="24dp"
               tools:context=".MainActivity">
     <EditText android:layout_width="match_parent"
+              android:id="@+id/type_text"
               android:layout_height="wrap_content"
+              android:inputType="text"
               android:layout_gravity="center"
-              android:hint="Type something" />
+              tools:ignore="HardcodedText"
+              android:hint="Type something text"
+              android:autofillHints="no" />
 
     <TextView android:layout_width="match_parent"
               android:layout_height="wrap_content"
+              android:id="@+id/result_text"
               android:gravity="center"
               android:layout_marginTop="16dp"
               android:textSize="32sp"
-              android:text="Hello world" />
+              tools:ignore="HardcodedText"
+              android:text="Initial text" />
 
     <Button android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:id="@+id/set_text_button"
             android:layout_gravity="center"
             android:layout_marginTop="16dp"
-            android:text="Click here" />
+            android:onClick="setText"
+            android:text="Set text"
+            tools:ignore="HardcodedText" />
 </LinearLayout>
