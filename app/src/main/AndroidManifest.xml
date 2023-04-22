@@ -13,8 +13,11 @@
         android:theme="@style/Theme.Tanes"
         tools:targetApi="31">
         <activity
+            android:name=".ConstraintActivity"
+            android:exported="false" />
+        <activity
             android:name=".NextActivity"
-            android:exported="true" />
+            android:exported="false" />
         <activity
             android:name=".MainActivity"
             android:exported="true"

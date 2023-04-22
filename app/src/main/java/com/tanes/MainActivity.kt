@@ -21,6 +21,7 @@ class MainActivity : ComponentActivity() {
         val setTextButton = findViewById<Button>(R.id.set_text_button)
         val openWebsiteButton = findViewById<Button>(R.id.open_website)
         val nextActivityButton = findViewById<Button>(R.id.next_activity)
+        val constraintActivityButton = findViewById<Button>(R.id.constraint_activity)
         val typeText = findViewById<EditText>(R.id.type_text)
         val resultText = findViewById<TextView>(R.id.result_text)
 
@@ -38,6 +39,12 @@ class MainActivity : ComponentActivity() {
 
         nextActivityButton.setOnClickListener{
             val intent = Intent(this, NextActivity::class.java)
+
+            startActivity(intent)
+        }
+
+        constraintActivityButton.setOnClickListener{
+            val intent = Intent(this, ConstraintActivity::class.java)
 
             startActivity(intent)
         }
