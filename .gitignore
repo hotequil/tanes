@@ -25,6 +25,7 @@ replay_pid*
 
 # IDE's
 .idea
+/.idea
 /.idea/caches
 /.idea/libraries
 /.idea/modules.xml
