@@ -32,4 +32,20 @@
             android:onClick="setText"
             android:text="Set text"
             tools:ignore="HardcodedText" />
+
+    <Button android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/open_website"
+            android:layout_gravity="center"
+            android:layout_marginTop="16dp"
+            android:text="Open website"
+            tools:ignore="HardcodedText" />
+
+    <Button android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/next_activity"
+            android:layout_gravity="center"
+            android:layout_marginTop="16dp"
+            android:text="Next activity"
+            tools:ignore="HardcodedText" />
 </LinearLayout>

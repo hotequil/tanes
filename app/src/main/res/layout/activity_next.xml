@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical"
+              android:padding="24dp"
+              tools:context=".NextActivity">
+    <TextView android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:gravity="center"
+              android:textSize="44sp"
+              tools:ignore="HardcodedText"
+              android:text="Next activity" />
+
+    <Button android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/previous_activity"
+            android:layout_gravity="center"
+            android:layout_marginTop="24dp"
+            android:text="Previous activity"
+            tools:ignore="HardcodedText" />
+</LinearLayout>
