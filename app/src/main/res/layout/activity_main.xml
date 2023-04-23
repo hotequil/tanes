@@ -68,4 +68,12 @@
             android:layout_marginTop="16dp"
             android:text="Table activity"
             tools:ignore="HardcodedText" />
+
+    <Button android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/relative_activity"
+            android:layout_gravity="center"
+            android:layout_marginTop="16dp"
+            android:text="Relative activity"
+            tools:ignore="HardcodedText" />
 </LinearLayout>

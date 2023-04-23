@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="24dp"
+                tools:context=".RelativeActivity">
+    <TextView android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:textSize="42sp"
+              android:gravity="center"
+              tools:ignore="HardcodedText"
+              android:layout_centerVertical="true"
+              android:layout_centerHorizontal="true"
+              android:id="@+id/relative_text"
+              android:text="Relative layout here!" />
+
+    <Button android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/previous_activity"
+            android:layout_below="@id/relative_text"
+            android:layout_marginTop="16dp"
+            android:text="Previous activity"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
+            tools:ignore="HardcodedText" />
+</RelativeLayout>
