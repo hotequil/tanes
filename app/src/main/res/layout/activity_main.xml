@@ -60,4 +60,12 @@
                 android:text="Constraint activity"
                 tools:ignore="ButtonStyle, HardcodedText" />
     </LinearLayout>
+
+    <Button android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/table_activity"
+            android:layout_gravity="center"
+            android:layout_marginTop="16dp"
+            android:text="Table activity"
+            tools:ignore="HardcodedText" />
 </LinearLayout>

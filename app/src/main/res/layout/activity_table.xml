@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             xmlns:tools="http://schemas.android.com/tools"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             android:stretchColumns="0, 1"
+             android:padding="12dp"
+             tools:context=".TableActivity">
+    <TextView android:text="Welcome!"
+              android:textSize="32sp"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              tools:ignore="HardcodedText" />
+
+    <TableRow tools:ignore="UselessParent">
+        <TextView android:text="This is the TableLayout"
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  tools:ignore="HardcodedText" />
+
+        <Button android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/previous_activity"
+                android:text="Previous activity"
+                tools:ignore="HardcodedText" />
+    </TableRow>
+</TableLayout>
