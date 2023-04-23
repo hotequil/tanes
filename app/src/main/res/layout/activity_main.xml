@@ -41,19 +41,23 @@
             android:text="Open website"
             tools:ignore="HardcodedText" />
 
-    <Button android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/next_activity"
-            android:layout_gravity="center"
-            android:layout_marginTop="16dp"
-            android:text="Next activity"
-            tools:ignore="HardcodedText" />
+    <LinearLayout android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:layout_gravity="center"
+                  android:layout_marginTop="16dp"
+                  android:orientation="horizontal">
+        <Button android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/next_activity"
+                android:layout_marginEnd="8dp"
+                android:text="Next activity"
+                tools:ignore="ButtonStyle, HardcodedText" />
 
-    <Button android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/constraint_activity"
-            android:layout_gravity="center"
-            android:layout_marginTop="16dp"
-            android:text="Constraint activity"
-            tools:ignore="HardcodedText" />
+        <Button android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="8dp"
+                android:id="@+id/constraint_activity"
+                android:text="Constraint activity"
+                tools:ignore="ButtonStyle, HardcodedText" />
+    </LinearLayout>
 </LinearLayout>
