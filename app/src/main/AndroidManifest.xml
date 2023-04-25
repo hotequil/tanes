@@ -13,6 +13,9 @@
         android:theme="@style/Theme.Tanes"
         tools:targetApi="31">
         <activity
+            android:name=".ListActivity"
+            android:exported="false" />
+        <activity
             android:name=".RelativeActivity"
             android:exported="false" />
         <activity

@@ -24,6 +24,7 @@ class MainActivity : ComponentActivity() {
         val constraintActivityButton = findViewById<Button>(R.id.constraint_activity)
         val tableActivityButton = findViewById<Button>(R.id.table_activity)
         val relativeActivityButton = findViewById<Button>(R.id.relative_activity)
+        val listActivityButton = findViewById<Button>(R.id.list_activity)
         val typeText = findViewById<EditText>(R.id.type_text)
         val resultText = findViewById<TextView>(R.id.result_text)
 
@@ -59,6 +60,12 @@ class MainActivity : ComponentActivity() {
 
         relativeActivityButton.setOnClickListener{
             val intent = Intent(this, RelativeActivity::class.java)
+
+            startActivity(intent)
+        }
+
+        listActivityButton.setOnClickListener{
+            val intent = Intent(this, ListActivity::class.java)
 
             startActivity(intent)
         }
