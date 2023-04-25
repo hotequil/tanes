@@ -1,79 +1,83 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              xmlns:tools="http://schemas.android.com/tools"
-              android:layout_width="match_parent"
-              android:layout_height="match_parent"
-              android:orientation="vertical"
-              android:padding="24dp"
-              tools:context=".MainActivity">
-    <EditText android:layout_width="match_parent"
-              android:id="@+id/type_text"
-              android:layout_height="wrap_content"
-              android:inputType="text"
-              android:layout_gravity="center"
-              tools:ignore="HardcodedText"
-              android:hint="Type something text"
-              android:autofillHints="no" />
-
-    <TextView android:layout_width="match_parent"
-              android:layout_height="wrap_content"
-              android:id="@+id/result_text"
-              android:gravity="center"
-              android:layout_marginTop="16dp"
-              android:textSize="32sp"
-              tools:ignore="HardcodedText"
-              android:text="Initial text" />
-
-    <Button android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/set_text_button"
-            android:layout_gravity="center"
-            android:layout_marginTop="16dp"
-            android:onClick="setText"
-            android:text="Set text"
-            tools:ignore="HardcodedText" />
-
-    <Button android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/open_website"
-            android:layout_gravity="center"
-            android:layout_marginTop="16dp"
-            android:text="Open website"
-            tools:ignore="HardcodedText" />
-
-    <LinearLayout android:layout_width="wrap_content"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             xmlns:tools="http://schemas.android.com/tools"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             tools:context=".MainActivity">
+    <LinearLayout android:layout_width="match_parent"
+                  android:layout_height="match_parent"
+                  android:orientation="vertical"
+                  android:padding="24dp"
+                  tools:ignore="UselessParent">
+        <EditText android:layout_width="match_parent"
+                  android:id="@+id/type_text"
                   android:layout_height="wrap_content"
+                  android:inputType="text"
                   android:layout_gravity="center"
+                  tools:ignore="HardcodedText"
+                  android:hint="Type something text"
+                  android:autofillHints="no" />
+
+        <TextView android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:id="@+id/result_text"
+                  android:gravity="center"
                   android:layout_marginTop="16dp"
-                  android:orientation="horizontal">
-        <Button android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:id="@+id/next_activity"
-                android:layout_marginEnd="8dp"
-                android:text="Next activity"
-                tools:ignore="ButtonStyle, HardcodedText" />
+                  android:textSize="32sp"
+                  tools:ignore="HardcodedText"
+                  android:text="Initial text" />
 
         <Button android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginStart="8dp"
-                android:id="@+id/constraint_activity"
-                android:text="Constraint activity"
-                tools:ignore="ButtonStyle, HardcodedText" />
+                android:layout_height="wrap_content"
+                android:id="@+id/set_text_button"
+                android:layout_gravity="center"
+                android:layout_marginTop="16dp"
+                android:onClick="setText"
+                android:text="Set text"
+                tools:ignore="HardcodedText" />
+
+        <Button android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/open_website"
+                android:layout_gravity="center"
+                android:layout_marginTop="16dp"
+                android:text="Open website"
+                tools:ignore="HardcodedText" />
+
+        <LinearLayout android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:layout_gravity="center"
+                      android:layout_marginTop="16dp"
+                      android:orientation="horizontal">
+            <Button android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/next_activity"
+                    android:layout_marginEnd="8dp"
+                    android:text="Next activity"
+                    tools:ignore="ButtonStyle, HardcodedText" />
+
+            <Button android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="8dp"
+                    android:id="@+id/constraint_activity"
+                    android:text="Constraint activity"
+                    tools:ignore="ButtonStyle, HardcodedText" />
+        </LinearLayout>
+
+        <Button android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/table_activity"
+                android:layout_gravity="center"
+                android:layout_marginTop="16dp"
+                android:text="Table activity"
+                tools:ignore="HardcodedText" />
+
+        <Button android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/relative_activity"
+                android:layout_gravity="center"
+                android:layout_marginTop="16dp"
+                android:text="Relative activity"
+                tools:ignore="HardcodedText" />
     </LinearLayout>
-
-    <Button android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/table_activity"
-            android:layout_gravity="center"
-            android:layout_marginTop="16dp"
-            android:text="Table activity"
-            tools:ignore="HardcodedText" />
-
-    <Button android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/relative_activity"
-            android:layout_gravity="center"
-            android:layout_marginTop="16dp"
-            android:text="Relative activity"
-            tools:ignore="HardcodedText" />
-</LinearLayout>
+</FrameLayout>
