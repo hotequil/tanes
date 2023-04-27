@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Tanes</string>
+    <string-array name="pronouns">
+        <item>She/Her</item>
+        <item>He/Him</item>
+        <item>They/Them</item>
+        <item>Other</item>
+    </string-array>
 </resources>

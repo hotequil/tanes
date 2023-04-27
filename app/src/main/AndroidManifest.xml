@@ -13,6 +13,12 @@
         android:theme="@style/Theme.Tanes"
         tools:targetApi="31">
         <activity
+            android:name=".UserDataActivity"
+            android:exported="false" />
+        <activity
+            android:name=".SharedPreferencesActivity"
+            android:exported="false" />
+        <activity
             android:name=".ListActivity"
             android:exported="false" />
         <activity
