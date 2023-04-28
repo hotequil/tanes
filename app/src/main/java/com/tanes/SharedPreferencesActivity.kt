@@ -7,7 +7,9 @@ import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Spinner
+import android.widget.Toast
 import androidx.activity.ComponentActivity
+import androidx.core.database.getStringOrNull
 import java.lang.Exception
 
 class SharedPreferencesActivity : ComponentActivity() {
@@ -20,6 +22,7 @@ class SharedPreferencesActivity : ComponentActivity() {
         val showButton = findViewById<Button>(R.id.show_button)
         val inputName = findViewById<EditText>(R.id.input_name)
         val listPronouns = findViewById<Spinner>(R.id.list_pronouns)
+        val databaseManager = DatabaseManager(this, "tanes")
 
         backButton.setOnClickListener{
             val intent = Intent(this, MainActivity::class.java)
@@ -33,11 +36,28 @@ class SharedPreferencesActivity : ComponentActivity() {
             val name = inputName.editableText.toString()
             val pronoun = listPronouns.selectedItem.toString()
 
-            userDataEditor.putString("name", name)
-            userDataEditor.putString("pronoun", pronoun)
-            userDataEditor.apply()
+            if(name != "" && pronoun != ""){
+                userDataEditor.putString("name", name)
+                userDataEditor.putString("pronoun", pronoun)
+                userDataEditor.apply()
 
-            saveDataInFile(name, pronoun)
+                saveDataInFile(name, pronoun)
+
+                databaseManager.deleteUser()
+                databaseManager.insertUser(1, name, pronoun)
+
+                val cursor = databaseManager.listUsers()
+
+                if(cursor.count > 0){
+                    cursor.moveToFirst()
+
+                    val userName = cursor.getStringOrNull(cursor.getColumnIndex("name"))
+                    val userPronoun = cursor.getStringOrNull(cursor.getColumnIndex("pronoun"))
+
+                    if(userName != null && userName != "" && userPronoun != null && userPronoun != "")
+                        Toast.makeText(this, "Name is $userName and pronoun is $userPronoun", Toast.LENGTH_LONG).show()
+                }
+            }
         }
 
         showButton.setOnClickListener{
