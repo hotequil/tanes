@@ -10,6 +10,7 @@ import android.widget.Spinner
 import android.widget.Toast
 import androidx.activity.ComponentActivity
 import androidx.core.database.getStringOrNull
+import androidx.security.crypto.EncryptedSharedPreferences
 import java.lang.Exception
 
 class SharedPreferencesActivity : ComponentActivity() {
@@ -36,10 +37,24 @@ class SharedPreferencesActivity : ComponentActivity() {
             val name = inputName.editableText.toString()
             val pronoun = listPronouns.selectedItem.toString()
 
+            val userDataEncryptedSharedPreferences = EncryptedSharedPreferences.create(
+                "encrypted_user_data",
+                "app-key-here",
+                this,
+                EncryptedSharedPreferences.PrefKeyEncryptionScheme.AES256_SIV,
+                EncryptedSharedPreferences.PrefValueEncryptionScheme.AES256_GCM
+            )
+
             if(name != "" && pronoun != ""){
                 userDataEditor.putString("name", name)
                 userDataEditor.putString("pronoun", pronoun)
                 userDataEditor.apply()
+
+                with(userDataEncryptedSharedPreferences.edit()){
+                    putString("name", name)
+                    putString("pronoun", pronoun)
+                    apply()
+                }
 
                 saveDataInFile(name, pronoun)
 

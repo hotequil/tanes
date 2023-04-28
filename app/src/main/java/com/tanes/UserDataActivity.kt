@@ -8,6 +8,7 @@ import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.ComponentActivity
+import androidx.security.crypto.EncryptedSharedPreferences
 import java.lang.Exception
 import java.nio.charset.Charset
 import java.util.StringTokenizer
@@ -23,6 +24,15 @@ class UserDataActivity : ComponentActivity() {
         val textName = findViewById<TextView>(R.id.name)
         val textPronoun = findViewById<TextView>(R.id.pronoun)
         val backButton = findViewById<Button>(R.id.back_button)
+        val showEncryptedUserDataButton = findViewById<Button>(R.id.show_encrypted_user_data_button)
+
+        val userDataEncryptedSharedPreferences = EncryptedSharedPreferences.create(
+            "encrypted_user_data",
+            "app-key-here",
+            this,
+            EncryptedSharedPreferences.PrefKeyEncryptionScheme.AES256_SIV,
+            EncryptedSharedPreferences.PrefValueEncryptionScheme.AES256_GCM
+        )
 
         if(name !== "") textName.text = name
         if(pronoun !== "") textPronoun.text = pronoun
@@ -42,6 +52,14 @@ class UserDataActivity : ComponentActivity() {
             val intent = Intent(this, SharedPreferencesActivity::class.java)
 
             startActivity(intent)
+        }
+
+        showEncryptedUserDataButton.setOnClickListener{
+            val decryptedName = userDataEncryptedSharedPreferences.getString("name", "")
+            val decryptedPronoun = userDataEncryptedSharedPreferences.getString("pronoun", "")
+
+            if(decryptedName !== "" && decryptedPronoun !== "")
+                Toast.makeText(this, "$decryptedName is pronoun of $decryptedPronoun", Toast.LENGTH_LONG).show()
         }
     }
 
